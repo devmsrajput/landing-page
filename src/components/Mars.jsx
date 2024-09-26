@@ -23,7 +23,7 @@ export function MarsModel() {
   const [spring, api] = useSpring(()=> (
     {
       rotation: [0, 0, 0],
-      config: config.gentle
+      config: config.slow,
     }
   ))
 
@@ -61,9 +61,9 @@ export function MarsModel() {
   const { nodes, materials } = useGLTF('./models/mars-transformed.glb')
   return (
     <>
-      <group dispose={null} position={[0, -1, window.innerWidth < 500 ? -1 : 1]} ref={rotationRef}>
-        <animated.mesh {...bind()} rotation={spring.rotation} castShadow receiveShadow geometry={nodes.Mars_LOD0_MarsLOD1_0.geometry} material={materials.MarsLOD1} position={[0, 2.5, 0]} rotation={[Math.PI / 2, 0, 0]} />
-      </group>
+      <animated.group rotation={spring.rotation} {...bind()} dispose={null} position={[0, -1, window.innerWidth < 500 ? -1 : 1]} ref={rotationRef}>
+        <mesh castShadow receiveShadow geometry={nodes.Mars_LOD0_MarsLOD1_0.geometry} material={materials.MarsLOD1} position={[0, 2.5, 0]} rotation={[Math.PI / 2, 0, 0]} />
+      </animated.group>
     </>
   )
 }
