@@ -13,7 +13,7 @@ const TextStaggerAnimation = ({animationTxt}: TextStaggerAnimationProps) => {
   useGSAP(()=>{
     if(txtRef.current){
       gsap.to(".staggers", {
-        delay: 0.5,
+        delay: 1.5,
         duration: 1,
         y: 0,
         opacity: 1,
@@ -27,7 +27,7 @@ const TextStaggerAnimation = ({animationTxt}: TextStaggerAnimationProps) => {
   }, [txtRef.current])
 
   return (
-    <span ref={txtRef} className={`text-4xl inline-block font-bold`}>
+    <span ref={txtRef} className={`inline-block font-bold`}>
       {animationTxt.map((item, index)=> {
         return (
           <span key={index} className={`${index} staggers translate-y-10 opacity-0 inline-block whitespace-pre`}>{item}</span>

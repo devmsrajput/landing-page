@@ -39,7 +39,7 @@ const TextWaveAnimation = ({animationTxt}: TextWaveAnimationProps) => {
   }, [txtRef.current])
 
   return (
-    <span ref={txtRef} className={`text-4xl inline-block font-bold`}>
+    <span ref={txtRef} className={`inline-block`}>
       {animationTxt.map((item, index)=> {
         return (
           <span key={index} className={`${index < Math.floor(animationTxt.length / 2) ? "starting" : "ending"} translate-y-10 opacity-0 inline-block whitespace-pre`}>{item}</span>

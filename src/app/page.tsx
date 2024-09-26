@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 import MarsLoader from "@/components/MarsLoader";
 import {Poppins, Roboto} from "next/font/google"
@@ -5,11 +6,12 @@ import TextAnimation from "@/components/TextAnimation";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap"
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
+import { useEffect, useRef } from "react";
 
-const poppins = Poppins({subsets: ["latin"], weight: "500"})
-const roboto = Roboto({subsets: ["latin"], weight: "300"})
+const roboto = Roboto({subsets: ["latin"], weight: "100"})
 
 export default function Home() {
+
   useGSAP(()=> {
     gsap.to(".header4", {
       duration: 1,
@@ -26,18 +28,18 @@ export default function Home() {
     <div className="relative w-screen h-screen flex justify-center items-center">
       <MarsLoader />
       <div className="z-10">
-        <div className={`${poppins.className} text-center`}>
+        <div className={`text-center text-2xl md:text-3xl`}>
           {<TextAnimation txtContent="Welcome to my" classType="header1" />}{" "}
           {<TextAnimation txtContent="Portfolio" classType="header2" />}
         </div>
-        <div className={`text-6xl ${poppins.className} text-center`}>
+        <div className={`text-center text-2xl md:text-3xl font-bold`}>
           <TextAnimation txtContent="Mahendra Singh" classType="header3" />
         </div>
         <div className="text-zinc-400 max-w-xl mt-5 header4 translate-y-5 opacity-0 text-center">
-          <p className={`${roboto.className} text-xl tracking-wider`}>
+          <p className={`${roboto.className} md:text-lg text:md tracking-wider`}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fuga totam aspernatur consectetur nulla dolore iure, ducimus ipsam cupiditate rem repellat, quisquam ab vel porro ipsum reprehenderit aperiam? Nam, libero!
           </p>
-          <a href="mailto://devmsrajput@gmail.com" className="mt-5 inline-block hover:text-white p-3 border rounded-lg font-bold space-x-4 justify-between items-center">
+          <a href="mailto:devmsrajput@gmail.com" className="mt-5 inline-block hover:text-white p-3 border rounded-lg font-bold space-x-4 justify-between items-center">
             <MdOutlineMarkEmailUnread className="text-3xl inline-block" />
             <span className="inline-block">Contact Email</span>
           </a>

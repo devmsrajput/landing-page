@@ -19,14 +19,14 @@ const TextConsicutiveAnimation = ({animationTxt}: TextConsicutiveAnimationProps)
         numberType = numberType.split(" ")
         if(numberType[0] % 2 === 0){
           gsap.from(elm[index], {
-            delay: 0.5,
+            delay: 1,
             duration: 1,
             y: 20,
             opacity: 0
           })
         } else {
           gsap.from(elm[index], {
-            delay: 0.5,
+            delay: 1,
             duration: 2,
             y: -20,
             opacity: 0
@@ -37,7 +37,7 @@ const TextConsicutiveAnimation = ({animationTxt}: TextConsicutiveAnimationProps)
   }, [txtRef.current])
 
   return (
-    <span ref={txtRef} className={`text-4xl inline-block font-bold`}>
+    <span ref={txtRef} className={`inline-block font-bold`}>
       {animationTxt.map((item, index)=> {
         return (
           <span key={index} className={`${index} inline-block whitespace-pre`}>{item}</span>

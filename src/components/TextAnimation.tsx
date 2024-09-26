@@ -6,7 +6,7 @@ import TextStaggerAnimation from './TextStaggerAnimation';
 import TextWaveAnimation from './TextWaveAnimation';
 
 const poppins1 = Poppins({subsets: ["latin"], weight: "500"})
-const poppins2 = Poppins({subsets: ["latin"], weight: "800"})
+const poppins2 = Poppins({subsets: ["latin"], weight: "700"})
 
 interface TextAnimationProps {
   txtContent: string;
